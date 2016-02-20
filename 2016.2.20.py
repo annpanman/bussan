@@ -78,11 +78,11 @@ def yaku(g):
         else:
             return 9#ワンペア
 
-del a[(b1-1)*13+b2-1]
-del a[(c1-1)*13+c2-1]
-del a[(d1-1)*13+d2-1]
-del a[(e1-1)*13+e2-1]
-del a[(f1-1)*13+f2-1]
+
+for i in range(5):
+    ind = a.index(g[i])
+    del a[ind]
+
 
 t1=time.clock()
 qqq=[]
@@ -126,6 +126,7 @@ for ggg in range(5):
     for ggh in range(47):
         n[ggg]=a[ggh]
         n1[yaku(n)-1]+=1
+
 for ggi in range(len(n)-1):
     for ggj in range(ggi+1,len(n)):
         for ggk in range(46):
@@ -134,33 +135,14 @@ for ggi in range(len(n)-1):
                 n[ggi]=a[ggk]
                 n[ggj]=a[ggl]
                 n2[yaku(n)-1]+=1
-for ggm in range(3):
-    for ggn in range(ggm+1,4):
-        for ggo in range(ggn+1,5):
-            for ggp in range(45):
-                for ggq in range(ggp+1,46):
-                    n=copy.deepcopy(m1)
-                    for ggr in range(ggq+1,47):
-                        n[ggm]=a[ggp]
-                        n[ggn]=a[ggq]
-                        n[ggo]=a[ggr]
+
+for ggn in range(4):
+    for ggo in range(ggn+1,5):
+        for ggp in range(45):
+            for ggq in range(ggp+1,46):
+                for ggr in range(ggq+1,47):
+                        n=[a[ggp],a[ggq],a[ggr],m1[ggn],m1[ggo]]
                         n3[yaku(n)-1]+=1
-"""                        
-for ggs in range(2):
-    for ggt in range(ggs+1,3):
-        for ggu in range(ggt+1,4):
-            for ggv in range(ggu+1,5):
-                for ggw in range(44):
-                    for ggx in range(ggw+1,45):
-                        for ggy in range(ggx+1,46):
-                            n=copy.deepcopy(m1)
-                            for ggz in range(ggy+1,47):
-                                n[ggs]=a[ggw]
-                                n[ggt]=a[ggx]
-                                n[ggu]=a[ggy]
-                                n[ggv]=a[ggz]
-                                n4[yaku(n)-1]+=1
-"""
 
 for ggs in range(5):
     for ggw in range(44):
