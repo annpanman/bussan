@@ -153,7 +153,7 @@ t2=time.clock()
 print(t2-t1)
 
 
-win=[]
+win=[0]*30
 for zzx in range(30):
     for zzz in range(10): 
         win[zzx]=kakuritu[zzx][zzz]/sum(kakuritu[zzx])*sum(n5[zzz:])/sum(n5)
